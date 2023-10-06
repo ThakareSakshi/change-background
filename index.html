@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="container">
+        <button id="btn">Change Background</button>
+    </div>
+</body>
+<script>
+    let div=document.getElementById("container");
+   let btn=document.getElementById("btn");
+    btn.addEventListener('click',()=>{
+        div.style.backgroundColor="#"+Math.floor(Math.random()*16777215).toString(16);
+        document.body.classList.add("add-animation");
+        btn.classList.add("btn-color");
+        setTimeout(() => {
+        document.body.classList.remove('add-animation');
+        btn.classList.remove('btn-color');
+    }, 500);
+    })
+</script>
+</html>
